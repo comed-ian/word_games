@@ -8,7 +8,7 @@ glibc-2.32+, released December, 2020, implements a new heap protection feature c
 
 Source: [Check Point Research](https://research.checkpoint.com/2020/safe-linking-eliminating-a-20-year-old-malloc-exploit-primitive/)
 
-The goal of this mitigation is to prevent attackers from leaking heap addresses and arbitrarily overwiting linked-list metadata.  While effective against a number of previously exploitable vulnerabilities, the following challenge demonstrates that the mitigation can be completely bypassed in specific scenarios.  
+The goal of this mitigation is to prevent attackers from leaking heap addresses and arbitrarily overwriting linked-list metadata.  While effective against a number of previously exploitable vulnerabilities, the following challenge demonstrates that the mitigation can be completely bypassed in specific scenarios.  
 
 ## Challenge Overview
 The challenge requests words from the user and logs them in a linked list (`yours`).  The program also contains a secondary linked list (`mine`) which is only populated when an input contains the string `fun`.  The user has the option of suggesting a word, deleting their list, or reading the program's favorite word at that point in time.  The favorite word is the longest word containing `fun`.  Finally, the program deletes the `mine` list when four `fun` words are suggested, but interaction with the binary continues.  
